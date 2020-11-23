@@ -1,0 +1,6 @@
+-- select cd.bookings.starttime from cd.bookings where 
+-- select cd.members.memid,cd.members.firstname||' '||cd.members.surname as full_name,extract(hour from starttime)||':'||extract(minute from starttime)||':'||extract(second from starttime) as start_time from cd.bookings left join cd.members on cd.bookings.memid = cd.members.memid where cd.members.firstname='David' and cd.members.surname='Farrell'
+-- select extract(hour from starttime)||':'||extract(minute from starttime)||':'||extract(second from starttime) as start_time from cd.bookings where extract(year from starttime)||'-'||'0'||extract(month from starttime)||'-'||extract(day from starttime)='2012-09-21'
+-- select cd.bookings.facid, sum(cd.bookings.slots) as total_slots from cd.bookings group by cd.bookings.facid having sum(cd.bookings.slots) > 1000 order by facid
+-- select cd.bookings.facid, sum(cd.bookings.slots) as total_slots from cd.bookings where extract(year from starttime)='2012' and extract(month from starttime)='9' group by facid order by facid
+-- select count(guestcost) from cd.facilities where guestcost >=10
