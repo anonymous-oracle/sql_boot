@@ -41,6 +41,7 @@
 -- select count(distinct amount) from payment where amount > 5;
 -- select count(distinct amount) from payment where amount < 5 and amount > 2;
 -- select distinct amount from payment where amount < 5 and amount > 2;
+-- select distinct amount from payment where amount <> 5; -- "<>" indicates not equal to
 
 -- select * from customer
 -- where first_name = 'Jared';
