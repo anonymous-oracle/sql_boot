@@ -52,7 +52,7 @@
 -- -- NOTE: FOR COLUMNS WHICH ARE UNIQUE ACROSS TABLES, IT IS ENOUGH TO JUST MENTION THE COLUMN NAME. BUT FOR THOSE TABLES
 -- -- WITH SAME COLUMN NAMES ACROSS, WE HAVE TO MENTION <TABLE_NAME>.<COLUMN_NAME>
 
--- -- OUTER JOINS
+-- -- OUTER JOINS (LEFT JOIN: A - B & RIGHT JOIN: B - A)
 -- select * from customer full outer join payment on customer.customer_id =payment.customer_id
 -- select * from customer full outer join payment on customer.customer_id =payment.customer_id where customer.customer_id is null or payment.payment_id is null
 -- select count(*) from customer full outer join payment on customer.customer_id =payment.customer_id where customer.customer_id is not null or payment.customer_id is not null
