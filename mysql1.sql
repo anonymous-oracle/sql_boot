@@ -6,6 +6,7 @@
 -- select lastName from employees;
 -- SELECT lastName, firstName, jobTitle FROM employees;
 
+
 -- -- ALTERNATE USE OF SELECT STATEMENTS
 -- SELECT 1 + 1;
 -- SELECT NOW();
@@ -40,4 +41,33 @@
 
 -- -- Using MySQL ORDER BY clause to sort a result set by an expression example
 -- SELECT orderNumber, orderlinenumber, quantityOrdered * priceEach FROM orderdetails ORDER BY quantityOrdered * priceEach DESC;
+-- SELECT orderNumber, orderlinenumber, quantityOrdered * priceEach AS subtotal FROM orderdetails ORDER BY quantityOrdered * priceEach DESC;
 
+-- -- Using MySQL ORDER BY clause to sort data using a custom list
+-- -- The FIELD() function has the following syntax:
+-- -- FIELD(str, str1, str2, ...)
+-- SELECT FIELD('A', 'A', 'B','C');
+-- SELECT FIELD('B', 'A', 'B','C');
+
+-- -- Suppose that you want to sort the sales orders based on their statuses in the following order:
+
+-- --     In Process
+-- --     On Hold
+-- --     Canceled
+-- --     Resolved
+-- --     Disputed
+-- --     Shipped
+
+-- -- To do this, you can use the FIELD() function to map each order status to a number and sort the result by the result of the FIELD() function:
+
+-- SELECT 
+--     orderNumber, status
+-- FROM
+--     orders
+-- ORDER BY FIELD(status,
+--         'In Process',
+--         'On Hold',
+--         'Cancelled',
+--         'Resolved',
+--         'Disputed',
+--         'Shipped');
