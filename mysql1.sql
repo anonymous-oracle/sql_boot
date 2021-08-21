@@ -1,11 +1,13 @@
 -- -- USING DATABASE FROM 'mysqlsampledatabase.sql'
 
+--------------------------------------------------------------------------------------------------------------------------------------
 
 -- --  The SELECT statement allows you to select data from one or more tables. To write a SELECT statement in MySQL, you use this syntax:
 -- --  SELECT select_list FROM table_name;
 -- select lastName from employees;
 -- SELECT lastName, firstName, jobTitle FROM employees;
 
+--------------------------------------------------------------------------------------------------------------------------------------
 
 -- -- ALTERNATE USE OF SELECT STATEMENTS
 -- SELECT 1 + 1;
@@ -28,6 +30,8 @@
 -- -- If the column alias contains spaces, you need to place it inside quotes like this:
 -- SELECT CONCAT('Jane',' ','Doe') AS 'Full name';
 
+--------------------------------------------------------------------------------------------------------------------------------------
+
 -- Introduction to the MySQL ORDER BY clause
 
 -- When you use the SELECT statement to query data from a table, the order of rows in the result set is unspecified. To sort the rows in the result set, you add the ORDER BY clause to the SELECT statement.
@@ -42,6 +46,8 @@
 -- -- Using MySQL ORDER BY clause to sort a result set by an expression example
 -- SELECT orderNumber, orderlinenumber, quantityOrdered * priceEach FROM orderdetails ORDER BY quantityOrdered * priceEach DESC;
 -- SELECT orderNumber, orderlinenumber, quantityOrdered * priceEach AS subtotal FROM orderdetails ORDER BY quantityOrdered * priceEach DESC;
+
+--------------------------------------------------------------------------------------------------------------------------------------
 
 -- -- Using MySQL ORDER BY clause to sort data using a custom list
 -- -- The FIELD() function has the following syntax:
@@ -71,3 +77,32 @@
 --         'Resolved',
 --         'Disputed',
 --         'Shipped');
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+-- -- MySQL ORDER BY and NULL
+
+-- -- In MySQL, NULL comes before non-NULL values. Therefore, when you the ORDER BY clause with the ASC option, NULLs appear first in the result set.
+
+-- -- For example, the following query uses the ORDER BY clause to sort employees by values in the reportsTo column:
+
+-- SELECT 
+--     firstName, lastName, reportsTo
+-- FROM
+--     employees
+-- ORDER BY reportsTo;
+-- select firstName, lastName, reportsTo from employees order by reportsTo desc;
+
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+-- -- The WHERE clause allows you to specify a search condition for the rows returned by a query. The following shows the syntax of the WHERE clause:
+
+-- -- SELECT 
+-- --     select_list
+-- -- FROM
+-- --     table_name
+-- -- WHERE
+-- --     search_condition;
+
+-- select firstName, lastName, jobTitle from employees where jobTitle='Sales Rep';
